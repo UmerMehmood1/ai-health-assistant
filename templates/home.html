@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>AI Health Assistant</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the AI-Powered Health Assistant</h1>
+        <p>Hello {{ user.name }}!</p>
+
+        <h3>Your Profile Summary</h3>
+        <ul>
+            <li>Age: {{ user.age }}</li>
+            <li>Gender: {{ user.gender }}</li>
+            <li>Height: {{ user.height }} cm</li>
+            <li>Weight: {{ user.weight }} kg</li>
+            <li>Health Goals: {{ user.health_goals }}</li>
+        </ul>
+
+        <h3>Choose an option:</h3>
+        <center>
+            <div class="button-container">
+                <a href="/daily_suggestions" class="button">Get Daily Health Suggestions</a>
+                <a href="/diet_plan" class="button">Generate Diet Plan</a>
+                <a href="/fitness_plan" class="button">Generate Fitness Plan</a>
+            </div>
+        </center>
+
+        <h3>Symptom Checker</h3>
+        <form action="/symptom_checker" method="post">
+            <label for="symptoms">Enter your symptoms:</label>
+            <input type="text" id="symptoms" name="symptoms" required>
+            <button type="submit">Check Symptoms</button>
+        </form>
+    </div>
+</body>
+</html>
